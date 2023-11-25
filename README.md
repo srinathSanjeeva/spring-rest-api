@@ -1,2 +1,2 @@
 # spring-rest
- A primer on Spring RESTful web services.
+ A primer on Spring RESTful webservices
