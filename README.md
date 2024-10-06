@@ -1,5 +1,3 @@
-### `README.md`
-
 # Spring Boot REST API with H2 and MySQL Database
 
 This project is a Spring Boot-based REST API that can connect to either an H2 in-memory database or a MySQL database, depending on the environment. The database configuration is managed using Spring profiles.
