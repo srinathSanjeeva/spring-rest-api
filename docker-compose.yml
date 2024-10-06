@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  spring-app:
+    image: your-docker-username/spring-rest-app
+    environment:
+      - SPRING_PROFILES_ACTIVE=mysql # or h2, depending on which profile you want
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql-db
+
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: your_password
+      MYSQL_DATABASE: your_database_name
+    ports:
+      - "3306:3306"
