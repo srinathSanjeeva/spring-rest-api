@@ -2,40 +2,18 @@
 
 This project is a Spring Boot-based REST API that can connect to either an H2 in-memory database or a MySQL database, depending on the environment. The database configuration is managed using Spring profiles.
 
-## Features
-
-- REST API built using Spring Boot.
-- Supports both H2 (in-memory) and MySQL databases.
-- Docker and Docker Compose setup for easy deployment.
-- Automatic database schema generation and initialization.
-
-## Prerequisites
-
-- Java 17+
-- Maven 3+
-- Docker (optional, for containerization)
-- MySQL (optional, for MySQL database)
-
-## Project Structure
-
-- **Spring Boot REST API**: Implements CRUD operations.
-- **Database Profiles**: Switch between H2 (for development and testing) and MySQL (for production).
-- **Docker Integration**: Containerize the application and run it with either database.
+[![Test Coverage](https://img.shields.io/badge/coverage-0%25-red)](https://img.shields.io/badge/coverage-0%25-red)
 
 ## Getting Started
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/srinathSanjeeva/spring-rest.git
-cd spring-rest
+git clone https://github.com/srinathSanjeeva/spring-rest-api.git
+cd spring-rest-api
 ```
 
-````
-
 ### 2. Build the Project
-
-You can build the project using Maven.
 
 ```bash
 mvn clean package
@@ -61,19 +39,31 @@ To run the application with MySQL, first ensure you have a running MySQL instanc
 mvn spring-boot:run -Dspring-boot.run.profiles=mysql
 ```
 
-### 4. Docker Instructions
+### 4. API Contract and Swagger UI
+
+The API contract is defined in the `api.json` file, which is an OpenAPI 3.0 specification.
+
+When running the application with the `dev` profile, you can access the Swagger UI to interact with the API at the following URL:
+
+[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+To run with the `dev` profile:
+
+```bash
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
+```
+
+### 5. Docker Instructions
+
+You can build and run the application using Docker.
 
 #### Build Docker Image
-
-You can build the Docker image of the application using the following command:
 
 ```bash
 docker build -t spring-rest-app .
 ```
 
 #### Run Docker Container
-
-You can run the Docker container with either the H2 or MySQL profile.
 
 - **To run with H2 (default):**
 
@@ -87,66 +77,8 @@ docker run -d -p 8080:8080 spring-rest-app
 docker run -d -p 8080:8080 -e SPRING_PROFILES_ACTIVE=mysql spring-rest-app
 ```
 
-### 5. Using Docker Compose
-
-You can orchestrate the application with a MySQL database using Docker Compose.
-
-#### Step 1: Modify `docker-compose.yml`
-
-Ensure that the `docker-compose.yml` file is configured for your MySQL database credentials.
-
-#### Step 2: Run with Docker Compose
-
-Run the application with Docker Compose:
+- **To run with Swagger UI enabled (dev profile):**
 
 ```bash
-docker-compose up
+docker run -d -p 8080:8080 -e SPRING_PROFILES_ACTIVE=dev spring-rest-app
 ```
-
-### 6. API Endpoints
-
-The following REST API endpoints are exposed by the application:
-
-- **GET** `/api/users`: Get all users.
-- **GET** `/api/users/{id}`: Get user by ID.
-- **POST** `/api/users`: Create a new user.
-- **PUT** `/api/users/{id}`: Update user by ID.
-- **DELETE** `/api/users/{id}`: Delete user by ID.
-
-### 7. Environment Variables
-
-The following environment variables are used to configure the application:
-
-- `SPRING_DATASOURCE_URL`: JDBC URL for the database (e.g., MySQL or H2).
-- `SPRING_DATASOURCE_USERNAME`: Username for the database.
-- `SPRING_DATASOURCE_PASSWORD`: Password for the database.
-- `SPRING_PROFILES_ACTIVE`: Active Spring profile (`h2` or `mysql`).
-
-### 8. Switching Between H2 and MySQL
-
-The default profile is set to `h2` (in-memory database). To switch to MySQL, use the `SPRING_PROFILES_ACTIVE` environment variable:
-
-```bash
-docker run -d -p 8080:8080 -e SPRING_PROFILES_ACTIVE=mysql spring-rest-app
-```
-
-### 9. License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-### Summary
-
-This project provides a Spring Boot REST API that supports both H2 and MySQL databases, with the ability to switch between them using Spring profiles. The project can be easily containerized and deployed using Docker and Docker Compose.
-
-```
-
-### How to Use this `README.md`:
-1. Place this content in the root of your project directory in a file called `README.md`.
-2. Replace the repository URL and any other specific details where needed.
-3. This markdown file contains instructions on how to run the application both locally and with Docker, and explains how to switch between H2 and MySQL databases using Spring profiles.
-
-Let me know if you need further adjustments or additions!
-```
-````

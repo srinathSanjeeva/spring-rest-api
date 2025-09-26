@@ -1,5 +1,6 @@
 package org.sanjeevas.springrest;
 
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -16,10 +17,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@WithMockUser
 public class EmployeeControllerTest {
 
     @Autowired
@@ -36,8 +39,8 @@ public class EmployeeControllerTest {
         mockMvc
             .perform(get("/employees"))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$", hasSize(3)))
-            .andExpect(jsonPath("$[0].name", is("John Doe")));
+            .andExpect(jsonPath("$._embedded.employeeList", hasSize(2)))
+                        .andExpect(jsonPath("$._embedded.employeeList[0].name", is("John Doe")));
     }
 
     /**
@@ -65,8 +68,9 @@ public class EmployeeControllerTest {
                 post("/employees")
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(objectMapper.writeValueAsString(newEmployee))
+                    .with(csrf())
             )
-            .andExpect(status().isOk())
+            .andExpect(status().isCreated())
             .andExpect(jsonPath("$.name", is("Jane Doe")))
             .andExpect(jsonPath("$.role", is("CEO")));
     }
@@ -84,6 +88,7 @@ public class EmployeeControllerTest {
                 put("/employees/1") // Update employee with ID 1
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(objectMapper.writeValueAsString(updatedEmployee))
+                    .with(csrf())
             )
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.name", is("John Doe")))
@@ -96,7 +101,7 @@ public class EmployeeControllerTest {
     @Test
     public void shouldDeleteEmployee() throws Exception {
         mockMvc
-            .perform(delete("/employees/1")) // Delete employee with ID 1
+            .perform(delete("/employees/1").with(csrf())) // Delete employee with ID 1
             .andExpect(status().isOk());
     }
 }

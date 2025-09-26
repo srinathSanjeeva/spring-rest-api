@@ -2,6 +2,7 @@ package org.sanjeevas.springrest;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.Objects;
@@ -9,7 +10,7 @@ import java.util.Objects;
 @Entity
 public class Employee {
 
-    @Id @GeneratedValue Long id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
     String name;
     String role;
 
