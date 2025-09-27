@@ -1,0 +1,186 @@
+2025-09-26 23:48:45.158 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final 
+2025-09-26 23:48:45.228 [main] INFO  o.s.springrest.SpringRestApplication - Starting SpringRestApplication using Java 17.0.14 with PID 32292 (C:\projects\java\spring-rest-api\target\classes started by novap in C:\projects\java\spring-rest-api) 
+2025-09-26 23:48:45.231 [main] INFO  o.s.springrest.SpringRestApplication - No active profile set, falling back to 1 default profile: "default" 
+2025-09-26 23:48:46.861 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2025-09-26 23:48:46.976 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 1 JPA repository interface. 
+2025-09-26 23:48:48.538 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2025-09-26 23:48:48.554 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2025-09-26 23:48:48.560 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+2025-09-26 23:48:48.560 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30] 
+2025-09-26 23:48:48.719 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+2025-09-26 23:48:48.721 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3420 ms 
+2025-09-26 23:48:48.985 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+2025-09-26 23:48:49.223 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA 
+2025-09-26 23:48:49.226 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+2025-09-26 23:48:49.238 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb' 
+2025-09-26 23:48:49.481 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2025-09-26 23:48:49.575 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final 
+2025-09-26 23:48:49.635 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled 
+2025-09-26 23:48:50.182 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2025-09-26 23:48:50.265 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
+2025-09-26 23:48:51.779 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
+2025-09-26 23:48:51.868 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2025-09-26 23:48:52.351 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used. 
+2025-09-26 23:48:53.299 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig' defined in file [C:\projects\java\spring-rest-api\target\classes\org\sanjeevas\springrest\SecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'securityProperties': Could not bind properties to 'SecurityProperties' : prefix=app.security, ignoreInvalidFields=false, ignoreUnknownFields=true 
+2025-09-26 23:48:53.300 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2025-09-26 23:48:53.304 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2025-09-26 23:48:53.309 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2025-09-26 23:48:53.313 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat] 
+2025-09-26 23:48:53.339 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - ____Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2025-09-26 23:48:53.378 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - ____***************************__APPLICATION FAILED TO START__***************************____Description:____Binding to target org.sanjeevas.springrest.security.SecurityProperties$$SpringCGLIB$$0 failed:____    Property: app.security.jwt.secret__    Value: ""__    Origin: class path resource [application.properties] - 70:25__    Reason: JWT secret cannot be blank____    Property: app.security.jwt.secret__    Value: ""__    Origin: class path resource [application.properties] - 70:25__    Reason: JWT secret must be at least 32 characters______Action:____Update your application's configuration__ 
+2025-09-26 23:49:32.542 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final 
+2025-09-26 23:49:32.591 [main] INFO  o.s.springrest.SpringRestApplication - Starting SpringRestApplication using Java 17.0.14 with PID 11116 (C:\projects\java\spring-rest-api\target\classes started by novap in C:\projects\java\spring-rest-api) 
+2025-09-26 23:49:32.593 [main] INFO  o.s.springrest.SpringRestApplication - No active profile set, falling back to 1 default profile: "default" 
+2025-09-26 23:49:34.257 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2025-09-26 23:49:34.354 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 1 JPA repository interface. 
+2025-09-26 23:49:35.755 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2025-09-26 23:49:35.776 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2025-09-26 23:49:35.781 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+2025-09-26 23:49:35.782 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30] 
+2025-09-26 23:49:35.925 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+2025-09-26 23:49:35.926 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3267 ms 
+2025-09-26 23:49:36.191 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+2025-09-26 23:49:36.478 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA 
+2025-09-26 23:49:36.480 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+2025-09-26 23:49:36.507 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb' 
+2025-09-26 23:49:36.866 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2025-09-26 23:49:36.993 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final 
+2025-09-26 23:49:37.096 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled 
+2025-09-26 23:49:37.750 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2025-09-26 23:49:37.849 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
+2025-09-26 23:49:39.535 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
+2025-09-26 23:49:39.631 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2025-09-26 23:49:40.060 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used. 
+2025-09-26 23:49:40.923 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityUtils' defined in file [C:\projects\java\spring-rest-api\target\classes\org\sanjeevas\springrest\security\SecurityUtils.class]: Failed to instantiate [org.sanjeevas.springrest.security.SecurityUtils]: Constructor threw exception 
+2025-09-26 23:49:40.924 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2025-09-26 23:49:40.927 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2025-09-26 23:49:40.930 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2025-09-26 23:49:40.933 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat] 
+2025-09-26 23:49:40.963 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - ____Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2025-09-26 23:49:41.006 [main] ERROR o.s.boot.SpringApplication - Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityUtils' defined in file [C:\projects\java\spring-rest-api\target\classes\org\sanjeevas\springrest\security\SecurityUtils.class]: Failed to instantiate [org.sanjeevas.springrest.security.SecurityUtils]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at org.sanjeevas.springrest.SpringRestApplication.main(SpringRestApplication.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.sanjeevas.springrest.security.SecurityUtils]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:221)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:94)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1331)
+	... 17 common frames omitted
+Caused by: java.lang.UnsupportedOperationException: Utility class
+	at org.sanjeevas.springrest.security.SecurityUtils.<init>(SecurityUtils.java:25)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:195)
+	... 19 common frames omitted
+2025-09-26 23:50:28.962 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final 
+2025-09-26 23:50:29.047 [main] INFO  o.s.springrest.SpringRestApplication - Starting SpringRestApplication using Java 17.0.14 with PID 34172 (C:\projects\java\spring-rest-api\target\classes started by novap in C:\projects\java\spring-rest-api) 
+2025-09-26 23:50:29.050 [main] INFO  o.s.springrest.SpringRestApplication - No active profile set, falling back to 1 default profile: "default" 
+2025-09-26 23:50:30.638 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2025-09-26 23:50:30.710 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 1 JPA repository interface. 
+2025-09-26 23:50:32.081 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2025-09-26 23:50:32.103 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2025-09-26 23:50:32.107 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+2025-09-26 23:50:32.108 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30] 
+2025-09-26 23:50:32.226 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+2025-09-26 23:50:32.227 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3103 ms 
+2025-09-26 23:50:32.413 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+2025-09-26 23:50:32.704 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA 
+2025-09-26 23:50:32.707 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+2025-09-26 23:50:32.720 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb' 
+2025-09-26 23:50:32.977 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2025-09-26 23:50:33.069 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final 
+2025-09-26 23:50:33.136 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled 
+2025-09-26 23:50:33.729 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2025-09-26 23:50:33.813 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
+2025-09-26 23:50:35.390 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
+2025-09-26 23:50:35.500 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2025-09-26 23:50:36.393 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used. 
+2025-09-26 23:50:40.606 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2025-09-26 23:50:40.623 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop' 
+2025-09-26 23:50:40.628 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2025-09-26 23:50:40.631 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2025-09-26 23:50:40.637 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2025-09-26 23:50:40.668 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - ____Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2025-09-26 23:50:40.698 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - ____***************************__APPLICATION FAILED TO START__***************************____Description:____Web server failed to start. Port 8080 was already in use.____Action:____Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.__ 
+2025-09-26 23:51:05.624 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final 
+2025-09-26 23:51:05.692 [main] INFO  o.s.springrest.SpringRestApplication - Starting SpringRestApplication using Java 17.0.14 with PID 28096 (C:\projects\java\spring-rest-api\target\classes started by novap in C:\projects\java\spring-rest-api) 
+2025-09-26 23:51:05.694 [main] INFO  o.s.springrest.SpringRestApplication - No active profile set, falling back to 1 default profile: "default" 
+2025-09-26 23:51:07.435 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2025-09-26 23:51:07.513 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67 ms. Found 1 JPA repository interface. 
+2025-09-26 23:51:08.850 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http) 
+2025-09-26 23:51:08.865 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"] 
+2025-09-26 23:51:08.870 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+2025-09-26 23:51:08.870 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30] 
+2025-09-26 23:51:08.990 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+2025-09-26 23:51:08.991 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3209 ms 
+2025-09-26 23:51:09.194 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+2025-09-26 23:51:09.493 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA 
+2025-09-26 23:51:09.495 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+2025-09-26 23:51:09.508 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb' 
+2025-09-26 23:51:09.818 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2025-09-26 23:51:09.926 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final 
+2025-09-26 23:51:09.984 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled 
+2025-09-26 23:51:10.594 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2025-09-26 23:51:10.674 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
+2025-09-26 23:51:12.448 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
+2025-09-26 23:51:12.546 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2025-09-26 23:51:13.069 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used. 
+2025-09-26 23:51:16.798 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"] 
+2025-09-26 23:51:16.859 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/' 
+2025-09-26 23:51:16.881 [main] INFO  o.s.springrest.SpringRestApplication - Started SpringRestApplication in 12.054 seconds (process running for 12.556) 
+2025-09-26 23:51:17.102 [main] INFO  o.sanjeevas.springrest.LoadDatabase - Preloading Employee{id=1, name='John Doe', role='Thief', createdAt=2025-09-26T23:51:16.977828100, updatedAt=2025-09-26T23:51:16.977828100, version=0} 
+2025-09-26 23:51:17.105 [main] INFO  o.sanjeevas.springrest.LoadDatabase - Preloading Employee{id=2, name='Jake Dunn', role='accomplice', createdAt=2025-09-26T23:51:17.104633200, updatedAt=2025-09-26T23:51:17.104633200, version=0} 
+2025-09-26 23:51:32.970 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2025-09-26 23:51:32.973 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2025-09-26 23:51:32.977 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2025-09-26 23:51:46.447 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final 
+2025-09-26 23:51:46.514 [main] INFO  o.s.springrest.SpringRestApplication - Starting SpringRestApplication using Java 17.0.14 with PID 32220 (C:\projects\java\spring-rest-api\target\classes started by novap in C:\projects\java\spring-rest-api) 
+2025-09-26 23:51:46.516 [main] INFO  o.s.springrest.SpringRestApplication - No active profile set, falling back to 1 default profile: "default" 
+2025-09-26 23:51:48.077 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2025-09-26 23:51:48.147 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface. 
+2025-09-26 23:51:49.400 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http) 
+2025-09-26 23:51:49.413 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"] 
+2025-09-26 23:51:49.417 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+2025-09-26 23:51:49.418 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30] 
+2025-09-26 23:51:49.521 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+2025-09-26 23:51:49.522 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2940 ms 
+2025-09-26 23:51:49.759 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting... 
+2025-09-26 23:51:50.043 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA 
+2025-09-26 23:51:50.045 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed. 
+2025-09-26 23:51:50.060 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb' 
+2025-09-26 23:51:50.340 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2025-09-26 23:51:50.438 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final 
+2025-09-26 23:51:50.498 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled 
+2025-09-26 23:51:51.041 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer 
+2025-09-26 23:51:51.119 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
+2025-09-26 23:51:52.603 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
+2025-09-26 23:51:52.714 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2025-09-26 23:51:53.319 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used. 
+2025-09-26 23:51:56.690 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"] 
+2025-09-26 23:51:56.728 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/' 
+2025-09-26 23:51:56.750 [main] INFO  o.s.springrest.SpringRestApplication - Started SpringRestApplication in 11.115 seconds (process running for 11.649) 
+2025-09-26 23:51:56.932 [main] INFO  o.sanjeevas.springrest.LoadDatabase - Preloading Employee{id=1, name='John Doe', role='Thief', createdAt=2025-09-26T23:51:56.836695500, updatedAt=2025-09-26T23:51:56.836695500, version=0} 
+2025-09-26 23:51:56.937 [main] INFO  o.sanjeevas.springrest.LoadDatabase - Preloading Employee{id=2, name='Jake Dunn', role='accomplice', createdAt=2025-09-26T23:51:56.934684300, updatedAt=2025-09-26T23:51:56.934684300, version=0} 
+2025-09-26 23:52:00.639 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2025-09-26 23:52:01.543 [http-nio-8081-exec-2] INFO  o.s.springrest.EmployeeController - Getting all employees - page: 0, size: 10, sortBy: id, sortDir: asc 
+2025-09-26 23:52:01.744 [http-nio-8081-exec-2] INFO  o.s.s.s.impl.EmployeeServiceImpl - Retrieved 2 employees from page 0 of 1 
+2025-09-26 23:52:01.747 [http-nio-8081-exec-2] INFO  o.s.springrest.EmployeeController - Successfully retrieved 2 employees 

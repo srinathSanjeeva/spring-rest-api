@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <!-- 
+    OWASP Dependency Check Suppressions File
+    This file contains suppressions for known false positives or accepted risks
+    -->
+    
+    <!-- Example suppression for false positives -->
+    <!-- 
+    <suppress>
+        <notes><![CDATA[
+        file name: example.jar (shaded: example-1.0.0.jar)
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/com\.example/example@.*$</packageUrl>
+        <cve>CVE-2021-12345</cve>
+    </suppress>
+    -->
+    
+    <!-- Spring Boot Framework - Only suppress if analysis shows false positive -->
+    <!--
+    <suppress>
+        <notes><![CDATA[
+        Spring Boot vulnerabilities are actively monitored and patches applied
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.springframework\.boot/.*@.*$</packageUrl>
+    </suppress>
+    -->
+</suppressions>
