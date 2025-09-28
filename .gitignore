@@ -31,3 +31,74 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Log Files ###
+logs/
+*.log
+*.log.*
+*.gz
+
+### Security and Analysis Reports ###
+# OWASP Dependency Check reports
+dependency-check-report.html
+dependency-check-report.json
+dependency-check-report.xml
+dependency-check-vulnerabilities.json
+
+# SpotBugs reports
+spotbugsXml.xml
+findbugsXml.xml
+**/spotbugs.xml
+**/findbugs.xml
+
+# SonarQube
+.sonar/
+sonar-project.properties
+
+### Environment and Configuration ###
+# Environment files (should use environment variables instead)
+.env
+.env.local
+.env.*.local
+
+# Application-specific temp files
+*.tmp
+*.temp
+*.pid
+
+### OS Generated Files ###
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+### Database Files ###
+# H2 Database files (if using file-based H2)
+*.db
+*.mv.db
+*.trace.db
+
+### SSL/TLS Certificates and Keys ###
+# Never commit certificates or private keys
+*.key
+*.pem
+*.crt
+*.p12
+*.keystore
+*.truststore
+
+### Backup Files ###
+*.bak
+*.backup
+*.orig
